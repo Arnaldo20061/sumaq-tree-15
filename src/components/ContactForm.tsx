@@ -142,7 +142,7 @@ const ContactForm = () => {
                   type="submit"
                   className="w-full bg-forest-600 hover:bg-forest-700 text-white py-3 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Descargar guía gratuita
+                  Recibir guía gratuita
                 </Button>
 
                 <p className="text-sm text-coffee-500 text-center">
