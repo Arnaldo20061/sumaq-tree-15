@@ -69,14 +69,6 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="pt-8">
-              <Button
-                size="lg"
-                className="bg-coffee-600 hover:bg-coffee-700 text-white px-8 py-4 text-lg font-semibold rounded-xl"
-              >
-                Conoce cómo optimizar en solo 5 minutos
-              </Button>
-            </div>
           </div>
 
           {/* Formulario */}
