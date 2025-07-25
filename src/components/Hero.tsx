@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Leaf, Smartphone, TrendingUp } from "lucide-react";
 import { useState } from "react";
-const [showForm, setShowForm] = useState(false);
-
 
 const Hero = () => {
+  const [showForm, setShowForm] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
