@@ -45,7 +45,7 @@ const Hero = () => {
                     </button>
                     <h2 className="text-2xl font-bold mb-4">Solicita una demo</h2>
                     <form
-                      action="https://hook.us1.make.com/tu-webhook-aqui"
+                      action="https://hook.us2.make.com/zj73b67tahj8nboh3riwteklaxknvjge"
                       method="POST"
                       className="flex flex-col gap-4"
                     >
