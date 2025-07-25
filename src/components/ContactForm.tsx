@@ -15,17 +15,33 @@ const ContactForm = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await fetch("https://hook.us2.make.com/zj73b67tahj8nboh3riwteklaxknvjge", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
     toast({
       title: "¡Solicitud enviada!",
       description: "Nos pondremos en contacto contigo en las próximas 24 horas.",
     });
-    
+
     setFormData({ name: "", email: "", company: "" });
-  };
+  } catch (error) {
+    console.error("Error al enviar el formulario:", error);
+    toast({
+      title: "Hubo un problema 😕",
+      description: "Intenta de nuevo en unos minutos.",
+      variant: "destructive",
+    });
+  }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
