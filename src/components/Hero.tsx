@@ -2,42 +2,44 @@ import { Button } from "@/components/ui/button";
 import { Leaf, Smartphone, TrendingUp } from "lucide-react";
 import { useState } from 'react';
 
-const Hero = () => {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    mensaje: ''
+const [formData, setFormData] = useState({
+  nombre: '',
+  email: '',
+  mensaje: ''
+});
+
+const [showForm, setShowForm] = useState(false);
+const [enviado, setEnviado] = useState(false);
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
   });
-  
-  const [showForm, setShowForm] = useState(false);
-  const [enviado, setEnviado] = useState(false);
-  
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+};
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await fetch("https://hook.us2.make.com/zj73b67tahj8nboh3riwteklaxknvjge", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
     });
-  };
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    try {
-      await fetch("https://hook.us2.make.com/zj73b67tahj8nboh3riwteklaxknvjge", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
+    setEnviado(true);
+    setShowForm(false); // cierra el formulario si quieres
+    alert("✅ ¡Gracias por contactarnos!");
+  } catch (error) {
+    alert("⚠️ Ocurrió un error. Intenta de nuevo.");
+  }
+};
 
-      setEnviado(true);
-      setShowForm(false);
-      alert("✅ ¡Gracias por contactarnos!");
-    } catch (error) {
-      alert("⚠️ Ocurrió un error. Intenta de nuevo.");
-    }
-  };
+
+
+const Hero = () => {
+  const [showForm, setShowForm] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
