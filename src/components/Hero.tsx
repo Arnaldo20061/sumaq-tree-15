@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Leaf, Smartphone, TrendingUp } from "lucide-react";
 
+const scrollToFormulario = () => {
+  const section = document.getElementById("formulario");
+  section?.scrollIntoView({ behavior: "smooth" });
+};
+
+
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -33,6 +39,7 @@ const Hero = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
+                onClick={scrollToFormulario}
                 size="lg"
                 className="bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
               >

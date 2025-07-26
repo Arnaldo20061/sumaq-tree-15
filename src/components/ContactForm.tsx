@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, User, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -106,7 +107,8 @@ const ContactForm = () => {
                   </Label>
                   <div className="relative">
                     <User className="absolute left-3 top-3 w-5 h-5 text-coffee-400" />
-                    <Input
+                    <div id="formulario">
+                      <Input
                       id="name"
                       name="name"
                       type="text"
@@ -115,7 +117,8 @@ const ContactForm = () => {
                       onChange={handleChange}
                       className="pl-10 py-3 border-earth-300 focus:border-forest-500"
                       required
-                    />
+                      />
+                    </div>
                   </div>
                 </div>
 
