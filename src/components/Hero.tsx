@@ -7,7 +7,7 @@ const scrollToFormulario = () => {
   setTimeout(() => {
     const input = document.getElementById("name") as HTMLInputElement;
     input?.focus();
-  }, 800); // medio segundo para que termine el scroll
+  }, 1200); // medio segundo para que termine el scroll
 };
 
 
