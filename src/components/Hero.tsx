@@ -4,6 +4,10 @@ import { Leaf, Smartphone, TrendingUp } from "lucide-react";
 const scrollToFormulario = () => {
   const section = document.getElementById("formulario");
   section?.scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => {
+    const input = document.getElementById("name") as HTMLInputElement;
+    input?.focus();
+  }, 500); // medio segundo para que termine el scroll
 };
 
 
