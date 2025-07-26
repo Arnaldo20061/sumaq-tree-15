@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Leaf, Smartphone, TrendingUp } from "lucide-react";
-import { useState } from "react";
 
 const Hero = () => {
-  const [showForm, setShowForm] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
@@ -34,56 +32,11 @@ const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              {showForm && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                  <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md relative">
-                    <button
-                      onClick={() => setShowForm(false)}
-                      className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
-                    >
-                      &times;
-                    </button>
-                    <h2 className="text-2xl font-bold mb-4">Solicita una demo</h2>
-                    <form
-                      action="https://hook.us2.make.com/zj73b67tahj8nboh3riwteklaxknvjge"
-                      method="POST"
-                      className="flex flex-col gap-4"
-                    >
-                      <input
-                        type="text"
-                        name="nombre"
-                        placeholder="Tu nombre"
-                        className="border p-2 rounded"
-                        required
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Tu correo"
-                        className="border p-2 rounded"
-                        required
-                      />
-                      <textarea
-                        name="mensaje"
-                        placeholder="Cuéntanos sobre tu cultivo o necesidades"
-                        className="border p-2 rounded"
-                      />
-                      <button
-                        type="submit"
-                        className="bg-forest-600 hover:bg-forest-700 text-white px-4 py-2 rounded"
-                      >
-                        Enviar
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              )}
               <Button
-               size="lg"
-               className="bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
-               onClick={() => setShowForm(true)}
+                size="lg"
+                className="bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl"
               >
-              Solicita una demo personalizada
+                Solicita una demo personalizada
               </Button>
 
             </div>
