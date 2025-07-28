@@ -96,7 +96,7 @@ const ContactForm = () => {
                 Recibe una guía gratuita
               </CardTitle>
               <p className="text-coffee-600">
-                Aprende cómo certificar tu finca con tecnología
+                Aprende cómo impulsar tu finca con tecnología
               </p>
             </CardHeader>
             <CardContent>
